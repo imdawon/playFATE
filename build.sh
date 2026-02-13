@@ -1,0 +1,1 @@
+clang main.c controls.c -o bot -framework CoreGraphics -framework ApplicationServices
