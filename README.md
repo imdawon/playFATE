@@ -24,7 +24,7 @@ When an enemy is hovered over by the mouse, we get their name and health bar at 
 Theres a mode that exposes names above items in the world i.e Weapon Rack in the photo below. 
 
 There is a minimap that can always be present on screen showing the navigable areas.
-![test](game.png)
+![test](./media/game.png)
 
 ## OCR
 We will need OCR for certain things in the game: health, XP, damage popups, GP. These are in set locations so itll be easy to captur reliably.
@@ -41,7 +41,7 @@ Enemy scanning technique = click in direction you want to go, move mouse in circ
 
 The bottom left minimap is a godsend. We can likely use it exclusively as means of navigating via some traditional Djisktra or A* algorithm when in planning mode.
 
-![test](minimap.png)
+![test](./media/minimap.png)
 
 ## Open Questions
 - How do we decide which enemy to attack? Do we build up a roster with stats? Do we check how much damage we do to the enemy, and approximate their health? We need an effective combat strategy.
