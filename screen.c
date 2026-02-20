@@ -1,4 +1,5 @@
-// 640 x 480
+// 640 x 508 is the default
+// 800 x 628 is also supported
 #include "screen.h"
 #include <stdio.h>
 #include <ImageIO/ImageIO.h>
@@ -73,11 +74,15 @@ static float analyze_health_image(CGImageRef image) {
 }
 
 float get_health_percent(FateWindowInfo window) {
+    float scale = window.bounds.size.width / 640.0f;
+    // 480 - HEALTH_Y = 488 (the Y offset at 640x480 base resolution)
+    // 28px macOS title bar is fixed, only the game portion (460px) scales
+    float base_game_y = (480 - HEALTH_Y) - 28;  // 460
     CGRect health_rect = CGRectMake(
-        window.bounds.origin.x + HEALTH_X,
-        window.bounds.origin.y + 480 - HEALTH_Y ,
-        HEALTH_W,
-        HEALTH_H
+        window.bounds.origin.x + (int)(HEALTH_X * scale),
+        window.bounds.origin.y + 28 + (int)(base_game_y * scale),
+        (int)(HEALTH_W * scale),
+        (int)(HEALTH_H * scale)
     );
 
     CGImageRef image = CGWindowListCreateImage(
@@ -91,6 +96,12 @@ float get_health_percent(FateWindowInfo window) {
         printf("screen: failed to capture health bar region\n");
         return -1.0f;
     }
+
+    printf("screen: capturing rect x=%.0f y=%.0f w=%.0f h=%.0f (scale=%.2f)\n",
+           health_rect.origin.x, health_rect.origin.y,
+           health_rect.size.width, health_rect.size.height, scale);
+
+    save_debug_image(image, "/tmp/health_debug.png");
 
     float result = analyze_health_image(image);
     CGImageRelease(image);
