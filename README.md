@@ -2,7 +2,7 @@
 
 State machine galore:
 - Perception Layer
-  - ✅ Health (IMPLEMENTED!)
+  - ✅ Health
   - Enemies in area
   - Stamina
   - Inventory management
@@ -11,7 +11,7 @@ State machine galore:
   - Escape routes during combat
   - 
 - Action Layer
-  - macOS CoreGraphics controls for mouse / keyboard events
+  - ✅ macOS CoreGraphics controls for mouse / keyboard events
 
 
 ## Facts about the game
