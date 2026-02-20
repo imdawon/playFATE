@@ -1,5 +1,7 @@
 // 640 x 508 is the default
 // 800 x 628 is also supported
+// 1024 x 768 is also supported
+// any other aspect ratio will not work!
 #include "screen.h"
 #include <stdio.h>
 #include <ImageIO/ImageIO.h>
