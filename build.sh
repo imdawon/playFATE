@@ -1,1 +1,1 @@
-clang main.c controls.c window.c -o bot -framework CoreGraphics -framework ApplicationServices
+clang main.c controls.c window.c screen.c -o bot -framework CoreGraphics -framework ApplicationServices -mmacosx-version-min=14.0 

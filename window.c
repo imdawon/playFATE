@@ -1,3 +1,7 @@
+// Anything related to the FATE game window: 
+// - Window ID and Bounding Coordinates
+// - Extractied images from the FATE game window i.e health bar, gold points (Using Apple Vision OCR), etc.
+
 #include "window.h"
 
 FateWindowInfo get_fate_window_info() {
