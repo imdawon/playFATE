@@ -2,7 +2,7 @@
 
 State machine galore:
 - Perception Layer
-  - Health
+  - ✅ Health (IMPLEMENTED!)
   - Enemies in area
   - Stamina
   - Inventory management
