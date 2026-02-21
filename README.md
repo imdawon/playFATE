@@ -23,6 +23,8 @@ When an enemy is hovered over by the mouse, we get their name and health bar at 
 
 Theres a mode that exposes names above items in the world i.e Weapon Rack in the photo below. 
 
+Mousing over an enemy and holdinh left click attacks an enemy.
+
 There is a minimap that can always be present on screen showing the navigable areas.
 ![test](./media/game.png)
 
